@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user-post-reviews",
+      "handler": "user-post-review.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-post-reviews/count",
+      "handler": "user-post-review.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-post-reviews/:id",
+      "handler": "user-post-review.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-post-reviews",
+      "handler": "user-post-review.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-post-reviews/:id",
+      "handler": "user-post-review.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/user-post-reviews/:id",
+      "handler": "user-post-review.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

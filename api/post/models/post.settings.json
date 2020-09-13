@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "musica",
+        "literatura"
+      ],
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "music_url": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}

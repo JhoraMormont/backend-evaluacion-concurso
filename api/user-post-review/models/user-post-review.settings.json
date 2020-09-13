@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_post_reviews",
+  "info": {
+    "name": "user_post_review"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "note": {
+      "type": "integer",
+      "required": true
+    },
+    "posts": {
+      "collection": "post"
+    }
+  }
+}
