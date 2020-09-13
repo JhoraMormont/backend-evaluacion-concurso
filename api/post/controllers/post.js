@@ -10,14 +10,9 @@ const buildPost = async (posts) => {
   for (const post of posts) {
     const { id, title, content, music_url, author, category } = post;
 
-    console.log(category.id);
-
-    const categories = await strapi.services.category.findOne(category.id, [
-      "id",
-      "criteria",
-    ]);
-
-    console.log("Critrios", categories);
+    const dbCategory = await strapi.services.category.findOne({
+      id: category.id,
+    });
 
     const newPost = {
       id,
@@ -26,12 +21,11 @@ const buildPost = async (posts) => {
       music_url,
       author,
       category,
+      criteria: dbCategory.criteria,
     };
 
     response.push(newPost);
   }
-
-  console.log("response", response);
 
   return response;
 };
@@ -40,6 +34,7 @@ module.exports = {
   async find(ctx) {
     let posts = await strapi.services.post.find();
     const response = await buildPost(posts);
+
     return response;
   },
 };
