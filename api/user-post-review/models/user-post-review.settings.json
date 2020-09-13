@@ -9,16 +9,16 @@
     "timestamps": true
   },
   "attributes": {
-    "users": {
+    "user": {
       "plugin": "users-permissions",
-      "collection": "user"
+      "model": "user"
     },
     "note": {
       "type": "integer",
       "required": true
     },
-    "posts": {
-      "collection": "post"
+    "post": {
+      "model": "post"
     }
   }
 }

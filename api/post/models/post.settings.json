@@ -14,14 +14,6 @@
       "required": true,
       "unique": true
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "musica",
-        "literatura"
-      ],
-      "required": true
-    },
     "content": {
       "type": "text"
     },
@@ -30,6 +22,9 @@
     },
     "author": {
       "type": "string"
+    },
+    "category": {
+      "model": "category"
     }
   }
 }
