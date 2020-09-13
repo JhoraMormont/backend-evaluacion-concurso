@@ -52,6 +52,9 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "judge": {
+      "type": "string"
     }
   }
 }
