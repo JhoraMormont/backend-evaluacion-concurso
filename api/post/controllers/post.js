@@ -5,6 +5,15 @@
  * to customize this controller
  */
 
+const filterCriteria = (criteria) => {
+  return criteria.map(({ id, name }) => {
+    return {
+      id,
+      name,
+    };
+  });
+};
+
 const buildPost = async (posts) => {
   const response = [];
   for (const post of posts) {
@@ -21,7 +30,7 @@ const buildPost = async (posts) => {
       music_url,
       author,
       category,
-      criteria: dbCategory.criteria,
+      criteria: filterCriteria(dbCategory.criteria),
     };
 
     response.push(newPost);
@@ -34,7 +43,6 @@ module.exports = {
   async find(ctx) {
     let posts = await strapi.services.post.find();
     const response = await buildPost(posts);
-
     return response;
   },
 };
